@@ -5,8 +5,13 @@ from car.models import Car
 # Create your views here.
 def car_delete(request, pk):
 	car_obj = Car.objects.get(id=pk)
-	car_obj.delete()
-	return  redirect("/car/")
+	if request.method == "POST":
+		if "YES" in request.POST:
+			car_obj.delete()
+		return  redirect("/car/")
+
+	else:
+		return render(request, "car/delete.html",{"car":car_obj})
 
 def car_update(request, pk):
 	car_obj = Car.objects.get(id=pk)

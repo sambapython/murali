@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DELETE CAR</title>
+</head>
+<body>
+<form method="post">
+	{% csrf_token %}
+	<p>Do you want to delete {{car.name}}-{{car.number}}</p>
+	<input type="submit" name="YES" value="YES">
+	<input type="submit" name="NO" value="NO">
+</form>
+</body>
+</html>
