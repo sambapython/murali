@@ -1,0 +1,18 @@
+{% extends "bus/base.html" %}
+{% block content %}
+	<form method="POST">
+		{% csrf_token %}
+		<br><br>
+		Name:<input type="text" name="name" value="{{car.name}}"><br><br>
+
+		Number:<input type="text" name="number" value="{{car.number}}"><br><br>
+
+		Capacity:<input type="text" name="capacity" value="{{car.capacity}}"><br><br>
+
+		Fair:<input type="text" name="fair" value="{{car.fair}}"><br><br>
+
+		
+		<input type="submit" name="" value="Update car">
+	</form>
+	
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "bus/base.html" %}
+{% block content %}
+	<h2>Passenger Information </h2>
+	<a href="/passenger/passenger_create">Create Passenger</a>
+	<table border="2">
+		<tr>
+			<th>Name</th>
+			<th>Phone</th>
+			<th>DOB</th>
+			<th>Address</th>
+			<th>is_Driver</th>
+			<th>Operations</th>
+		</tr>
+		{% for passenger in data %}
+		<tr>
+			<td>{{passenger.name}}</td>
+			<td>{{passenger.phone}}</td>
+			<td>{{passenger.dob}}</td>
+			<td>{{passenger.address}}</td>
+			<td>{{passenger.is_driver}}</td>
+			<td><a href="/passenger/passenger_update/{{passenger.id}}">UPDATE</a>||<a href="/passenger/passenger_delete/{{passenger.id}}">DELETE</a></td>
+
+		</tr>
+		{% endfor %}
+	</table>
+
+{% endblock %}

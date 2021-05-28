@@ -1,0 +1,33 @@
+{% extends "bus/base.html" %}
+{% block content %}
+
+	<h1>{{msg}}</h1> 
+	<form method="POST">
+		{% csrf_token %}
+		Source:<input type="text" name="trip_source">
+		Destination:<input type="text" name="trip_destination">
+		No-Of-Kms:<input type="text" name="trip_kms">
+
+		Status:	<select name="trip_status">
+			{% for staus in statuses %}
+				<option value="{{staus}}">{{staus}}</option>
+			{% endfor %}
+		</select>
+
+		Driver:<select name="trip_driver">
+			{% for driver in drivers %}
+				<option value="{{driver.id}}">{{driver.name}}</option>
+			{% endfor %}
+		</select>
+
+		Passenger:
+		<select name="trip_passenger" multiple>
+			{% for passenger in passengers %}
+				<option value="{{passenger.id}}">{{passenger.name}}</option>
+			{% endfor %}
+		</select> 
+
+		<input type="submit" name="" value="create Trip">
+	</form>
+	
+{% endblock %}

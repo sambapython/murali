@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<form method="POST">
+		{% csrf_token %}
+		Passinger_Name:<input type="text" name="passinger_name" value="{{bus.passinger_name}}"><br><br><br>
+
+		Bus_Number:<input type="text" name="bus_number" value="{{bus.bus_number}}"><br><br><br>
+
+		Pickup_Point:<input type="text" name="pickup_point" value="{{bus.pickup_point}}"><br><br><br>
+
+		Droping_Point:<input type="text" name="droping_point" value="{{bus.droping_point}}"><br><br><br>
+
+		Price:<input type="text" name="price" value="{{bus.price}}"><br><br><br>
+
+		<input type="submit" name="" value="Update bus">
+	</form>
+	
+</body>
+</html>

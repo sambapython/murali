@@ -1,0 +1,10 @@
+{% extends "bus/base.html" %}
+{% block content %}
+	<form method="POST">
+		{% csrf_token %}
+		<p>Do You want to delete {{trip.Passengers}}-{{trip.driver}}</p>
+		<input type="submit" name="YES" value="YES">
+		<input type="submit" name="NO" value="NO">
+	</form>
+	
+{% endblock %}

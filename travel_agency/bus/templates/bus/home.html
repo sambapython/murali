@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+</head>
+<body>
+	<h2>Bus Information</h2>
+	<a href="/bus/create">Create Bus</a>
+	<table border="2">
+		<tr>
+			<th>Passinger_Name</th>
+			<th>Bus_Number</th>
+			<th>PickUp_Point</th>
+			<th>Droping_Point</th>
+			<th>Price</th>
+			<th>Operations</th>
+		</tr>
+		{% for bus in data %}
+		<tr>
+			<td>{{bus.passinger_name}}</td>
+			<td>{{bus.bus_number }}</td>
+			<td>{{bus.pickup_point}}</td>
+			<td>{{bus.droping_point}}</td>
+			<td>{{bus.price}}</td>
+			<!-- <td><a href="/bus/update/{{bus.id}}">UPDATE</a>||<a href="/bus/delete/{{bus.id}}">DELETE</a></td>
+ -->
+ 			<td><a href="/bus/update/{{bus.id}}">UPDATE</a>||<a href="/bus/delete/{{bus.id}}">DELETE</a></td>
+
+		</tr>
+		{% endfor %}
+	</table>
+
+</body>
+</html>

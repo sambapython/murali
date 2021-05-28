@@ -1,0 +1,51 @@
+{% extends "bus/base.html" %}
+{% block content %}
+ 
+
+	<form method="POST"> 
+		{% csrf_token %}
+		<br><br>
+		Source:<input type="text" name="source" value="{{trip.source}}"><br><br><br>
+
+		Destination:<input type="text" name="destination" value="{{trip.destination}}"><br><br><br>
+
+		No-Of-Kms:<input type="text" name="no_of_kms" value="{{trip.no_of_kms}}"><br><br><br>
+
+		Status:<input type="text" name="status" value="{{trip.status}}"><br><br><br>
+
+		<!-- Driver:<input type="text" name="driver" value="{{trip.driver}}"><br><br><br> -->
+
+		<!-- Passengers:<input type="text" name="Passengers" value="{{trip.get_passengers_str}}"><br><br><br> -->
+		
+		Driver:
+		<select name="driver" multiple>
+			<option value="{{trip.driver}}">{{trip.driver}}</option>
+		</select>
+		<br><br>
+
+		Passenger:
+		<select name="Passengers" multiple>
+			<option value="{{trip.get_passengers_str}}">{{trip.get_passengers_str}}</option>
+		</select>
+		<br><br>
+
+
+		<!-- Passenger:
+		<select name="Passengers" multiple>
+			{% for passenger in passengers %}
+				<option value="{{passenger.id}}">{{passenger.name}}</option>
+			{% endfor %}
+		</select><br><br> 
+
+		Driver:<select name="driver" multiple>
+			{% for driver in drivers %}
+				<option value="{{driver.id}}">{{driver.name}}</option>
+			{% endfor %}
+		</select> -->
+	
+
+		
+		<input type="submit" name="" value="Trip Update">
+	</form>
+	
+{% endblock %}

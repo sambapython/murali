@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bus Create</title> 
+</head>
+<body>
+	<h1>{{msg}}</h1>
+	<form method="POST">
+
+		{% csrf_token %}
+		Passinger_Name:<input type="text" name="bus_Passinger_Name"><br><br><br>
+		Bus_Number:<input type="text" name="bus_Bus_Number"><br><br><br>
+		Pickup_Point:<input type="text" name="bus_Pickup_Point"><br><br><br>
+		Droping_Point:<input type="text" name="bus_Droping_Point"><br><br><br>
+		Price:<input type="text" name="bus_Price"><br><br><br>
+		<input type="submit" name="" value="create bus">
+	</form>
+	
+</body>
+</html>

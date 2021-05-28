@@ -1,0 +1,18 @@
+{% extends "bus/base.html" %}
+{% block content %}
+	<form method="POST">
+		{% csrf_token %}
+		<br><br>
+		Name:<input type="text" name="name" value="{{passenger.name}}"><br><br><br>
+
+		Phone:<input type="text" name="phone" value="{{passenger.phone}}"><br><br><br>
+
+		DOB:<input type="text" name="dob" value="{{passenger.dob}}"><br><br><br>
+
+		Address:<input type="text" name="address" value="{{passenger.address}}"><br><br><br>
+		Is_Driver:<input type="text" name="is_driver" value="{{passenger.is_driver}}"><br><br><br>
+		
+		<input type="submit" name="" value="Update passenger">
+	</form>
+	
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "bus/base.html" %}
+{% block content %}
+	<h2>Trip Information</h2>
+	<a href="/trip/trip_create">Create Trip</a>
+	<table border="2">
+		<tr>
+			<th>Source</th>
+			<th>Destination</th>
+			<th>No_Of_Kms</th>
+			<th>Status</th>
+			<th>Driver</th>
+			<th>Passengers</th>
+			<th>Operations</th>
+		</tr>
+		{% for trip in data %}
+		<tr>
+			<td>{{trip.source}}</td>
+			<td>{{trip.destination}}</td>
+			<td>{{trip.no_of_kms}}</td>
+			<td>{{trip.status}}</td>
+			<td>{{trip.driver}}</td>
+			<td>{{trip.get_passengers_str}}</td>
+			<td><a href="/trip/trip_update/{{trip.id}}">UPDATE</a>||<a href="/trip/trip_delete/{{trip.id}}">DELETE</a></td>
+
+		</tr>
+		{% endfor %}
+	</table>
+
+{% endblock %}

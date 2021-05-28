@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Delete Bus</title>
+</head>
+<body>
+	<form method="POST">
+		{% csrf_token %}
+		<p>Do You want to delete {{bus.passinger_name}}-{{bus.bus_number}}</p>
+		<input type="submit" name="YES" value="YES">
+		<input type="submit" name="NO" value="NO">
+	</form>
+	
+</body>
+</html>

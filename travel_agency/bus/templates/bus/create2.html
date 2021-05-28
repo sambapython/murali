@@ -1,0 +1,14 @@
+{% extends "bus/base.html" %}
+{% block content %}
+	<h1>{{msg}}</h1>
+	<form method="POST">
+		{% csrf_token %}
+		NAME:<input type="text" name="pass_name">
+		PHONE:<input type="text" name="pass_phone">
+		DOB:<input type="text" name="pass_dob">
+		ADDRESS:<input type="text" name="pass_address">
+		IS_DRIVER:<input type="text" name="pass_driver">
+		<input type="submit" name="" value="create Passenger">
+	</form>
+	
+{% endblock %}
