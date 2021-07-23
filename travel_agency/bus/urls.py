@@ -5,9 +5,9 @@ from django.urls import path
 from bus.views import bus_create,bus_update,bus_delete,home1,car_create,car_update,car_delete,home2,passenger_create,passenger_update,passenger_delete,home3,trip_create,trip_update,trip_delete
 
 urlpatterns = [
-    path('',TemplateView.as_view(template_name="bus/home.html",
-      extra_context={"data":[Bus.objects.first()]}
-      )),
+    # path('',TemplateView.as_view(template_name="bus/home.html",
+    #   extra_context={"data":[Bus.objects.first()]}
+    #   )),
     path("create/",bus_create),
     path("update/<int:pk>/",bus_update),
     #path("delete/<int:pk>/",bus_delete),

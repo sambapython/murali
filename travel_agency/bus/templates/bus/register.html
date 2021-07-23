@@ -1,0 +1,10 @@
+{% extends 'bus/base.html'%}
+{% block content%}
+<h1>{{ errors }}</h1>
+<form method="post">
+{% csrf_token%}	
+{{ form.as_table }}
+<input type="submit" name="" value="REGISTER">
+</form>
+
+{% endblock%}

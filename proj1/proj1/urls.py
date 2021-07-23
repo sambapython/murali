@@ -1,7 +1,7 @@
-"""travel_agency URL Configuration
+"""proj1 URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/3.1/topics/http/urls/
+    https://docs.djangoproject.com/en/3.0/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -14,26 +14,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path,include
-#from bus.views import primary
-from django.views.generic.base import TemplateView
-from bus.user_views import register, login_view, logout_view
-
+from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-
-    #path("",primary),
-    #path("",TemplateView.as_view(template_name="bus/primary.html")),
-
-    path("bus/",include("bus.urls")),
-
-    path("car/",include("bus.urls")),
-
-    path("passenger/",include("bus.urls")),
-    path("trip/",include("bus.urls")),
-    path("register/",register),
-    path("login/",login_view),
-    path("logout/",logout_view),
-
 ]

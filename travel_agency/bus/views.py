@@ -1,11 +1,13 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
+
 from . models import Bus
 from . models import Car
 from . models import Passenger
 from . models import Trip
 from bus.forms import VehicleForm
-
+from bus.utilities import loginCheckDecorator
 # Create your views here.
 
 #############################Bus Information#############
@@ -125,13 +127,16 @@ def car_delete(request,pk):
 		return render(request,'bus/delete1.html',{'car':car_obj})
 
 #############################Passenger information###########
-
+#@login_required(login_url="/login/")
+# added login_url in settings
+@login_required
 def home2(request):
 	passenger_data = Passenger.objects.all()
 	return render(request,'bus/home2.html',{'data':passenger_data})
 
 
 #Create Process
+@login_required
 def passenger_create(request):
 	message = ""
 	if request.method == 'POST':
@@ -140,7 +145,9 @@ def passenger_create(request):
 			phone=data.get("pass_phone"),
 			dob=data.get("pass_dob"),
 			address=data.get("pass_address"),
-			is_driver=data.get("pass_driver"))
+			is_driver=data.get("pass_driver"),
+			created_by=request.user
+			)
 
 		passenger_object.save()
 		message = 'Passenger created successfully'

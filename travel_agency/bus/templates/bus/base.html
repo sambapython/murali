@@ -17,8 +17,17 @@
     </div>
     <ul class="nav navbar-nav">
       <li><a href="/car/car1/">VEHICLES</a></li>
+      {% if request.user.is_authenticated %}
       <li><a href="/passenger/passenger1/">PASSENGERS</a></li>
       <li><a href="/trip/trip1/">TRIPS</a></li>
+      <li><a href="/users/">USERS</a></li>
+       <li><a href="#">LOGIN AS {{ request.user.username }}</a></li>
+       <li><a href="/logout/">LOGOUT</a></li>
+      {% else %}
+      <li><a href="/register/">REGISTRATION</a></li>
+      <li><a href="/login/">LOGIN</a></li>
+      {% endif %}
+      
     </ul>
   </div>
 </nav>
